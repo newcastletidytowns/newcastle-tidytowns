@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Newcastle Tidy Towns</title>
+<meta name="description" content="Projects and photos from Newcastle Tidy Towns, South Dublin — planting, biodiversity, clean-ups and heritage work around the village.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M12 21c0-6 0-9 3-12 2-2 5-2 6-2 0 3-1 6-3 8-2.4 2.4-4.8 3-6 6z"/>
+        <path d="M12 21c0-4 0-6-2-8-1.4-1.4-3.6-2-5-2 0 2 .6 4 2 5.5C8.6 18 11 18 12 21z"/>
+      </svg>
+      Newcastle Tidy Towns
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="index.html#involved">Get involved</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('open')">Menu</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Projects</p>
+    <h1>What we've been working on.</h1>
+    <p>A record of our efforts around the village. Before-and-after photos are the best way to show progress — swap the placeholders below for your own.</p>
+  </div>
+</div>
+
+<main>
+  <section>
+    <div class="wrap">
+
+      <div class="project-block">
+        <h2>Main street planting</h2>
+        <p class="meta">Ongoing · seasonal tubs and beds</p>
+        <div class="gallery pairs">
+          <figure><div class="photo">Before<br>(bare tubs)</div><figcaption>Before — spring 2026</figcaption></figure>
+          <figure><div class="photo">After<br>(planted &amp; in bloom)</div><figcaption>After — summer 2026</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="project-block">
+        <h2>Village green wildflower area</h2>
+        <p class="meta">Biodiversity · supporting the All-Ireland Pollinator Plan</p>
+        <div class="gallery">
+          <div class="photo">Add a photo<br>(sowing day)</div>
+          <div class="photo">Add a photo<br>(first blooms)</div>
+          <div class="photo">Add a photo<br>(pollinators)</div>
+        </div>
+      </div>
+
+      <div class="project-block">
+        <h2>Clean-up days</h2>
+        <p class="meta">Monthly · volunteers of all ages</p>
+        <div class="gallery">
+          <div class="photo">Add a photo<br>(the team)</div>
+          <div class="photo">Add a photo<br>(before)</div>
+          <div class="photo">Add a photo<br>(after)</div>
+        </div>
+      </div>
+
+      <div class="project-block">
+        <h2>Heritage &amp; village core</h2>
+        <p class="meta">Caring for what makes Newcastle special</p>
+        <div class="gallery">
+          <div class="photo">Add a photo<br>(St Finian's)</div>
+          <div class="photo">Add a photo<br>(signage)</div>
+          <div class="photo">Add a photo<br>(shared spaces)</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="band">
+        <h2>Got photos to share?</h2>
+        <p>If you've taken photos at a clean-up or planting day, send them our way. Please make sure anyone in the photo is happy to have it shared first.</p>
+        <a class="btn btn-primary" href="index.html#contact">Send us photos</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Newcastle Tidy Towns, South Dublin</span>
+    <span><a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
