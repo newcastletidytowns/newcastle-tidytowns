@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility — Newcastle Tidy Towns</title>
+<meta name="description" content="Accessibility statement for the Newcastle Tidy Towns website, South Dublin. We aim to meet WCAG 2.1 AA and welcome feedback.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M12 21c0-6 0-9 3-12 2-2 5-2 6-2 0 3-1 6-3 8-2.4 2.4-4.8 3-6 6z"/>
+        <path d="M12 21c0-4 0-6-2-8-1.4-1.4-3.6-2-5-2 0 2 .6 4 2 5.5C8.6 18 11 18 12 21z"/>
+      </svg>
+      Newcastle Tidy Towns
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="index.html#involved">Get involved</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" onclick="var n=document.querySelector('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Accessibility</p>
+    <h1>Making this site work for everyone.</h1>
+    <p>We want the Newcastle Tidy Towns website to be usable by as many people as possible, whatever technology they use.</p>
+  </div>
+</div>
+
+<main id="main">
+  <section>
+    <div class="wrap" style="max-width:760px">
+
+      <p style="font-size:1.1rem;color:#40483f">This statement applies to the website at <strong>newcastlecodublintidytowns.ie</strong>. We aim to meet the <strong>WCAG 2.1 AA</strong> accessibility standard.</p>
+
+      <h2 style="font-family:'Fraunces',serif;font-size:1.6rem;margin:36px 0 12px">What we do to help</h2>
+      <p style="color:#40483f">This website has been built to:</p>
+      <ul style="color:#40483f;line-height:1.8">
+        <li>use clear, readable text with strong colour contrast;</li>
+        <li>work when navigating by keyboard, with a visible focus outline;</li>
+        <li>offer a "skip to main content" link for keyboard and screen-reader users;</li>
+        <li>use proper headings and page structure so screen readers can follow along;</li>
+        <li>include text descriptions for meaningful images;</li>
+        <li>resize and reflow cleanly on phones, tablets and computers.</li>
+      </ul>
+
+      <h2 style="font-family:'Fraunces',serif;font-size:1.6rem;margin:36px 0 12px">Areas we're still improving</h2>
+      <p style="color:#40483f">We're a small volunteer group and we keep working on accessibility as we add content. If you come across a page or feature that's hard to use, please tell us — it helps us fix it.</p>
+
+      <h2 style="font-family:'Fraunces',serif;font-size:1.6rem;margin:36px 0 12px">Tell us about a problem</h2>
+      <p style="color:#40483f">If you have trouble using any part of this website, or need information in a different format, please contact us and we'll do our best to help:</p>
+      <p style="font-size:1.1rem"><a href="mailto:hello@newcastlecodublintidytowns.ie">hello@newcastlecodublintidytowns.ie</a></p>
+      <p class="note">We aim to reply within a few days.</p>
+
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="band">
+        <h2>Thanks for helping us improve.</h2>
+        <p>Your feedback makes the site better for the whole community.</p>
+        <a class="btn btn-primary" href="index.html">Back to home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Newcastle Tidy Towns, South Dublin</span>
+    <span><a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
