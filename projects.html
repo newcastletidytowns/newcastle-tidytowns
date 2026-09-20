@@ -83,6 +83,20 @@
     <div class="wrap">
 
       <div class="project-block">
+        <h2>The Bric-a-Brac Sale</h2>
+        <p class="meta">A great turnout at St Finian's Community Hall, September 2026</p>
+        <div class="gallery" data-lightbox>
+          <figure><div class="photo"><img src="images/sale-group-1.jpg" alt="Some of the Newcastle Tidy Towns volunteers gathered together at the sale"></div></figure>
+          <figure><div class="photo"><img src="images/sale-group-2.jpg" alt="Newcastle Tidy Towns volunteers standing together near the Vintage stall"></div></figure>
+          <figure><div class="photo"><img src="images/sale-group-4.jpg" alt="A big group of the volunteers who helped run the sale"></div></figure>
+          <figure><div class="photo"><img src="images/sale-group-6.jpg" alt="Volunteers gathered among the stalls at the sale"></div></figure>
+          <figure><div class="photo"><img src="images/sale-hall-wide-1.jpg" alt="The community hall busy with people browsing the stalls"></div></figure>
+          <figure><div class="photo"><img src="images/sale-hall-wide-2.jpg" alt="A wide view of the hall full of shoppers on the day"></div></figure>
+          <figure><div class="photo"><img src="images/sale-pricing-sign.jpg" alt="The colour-coded pricing sign for the sale: items from one to five euro, and all books five for two euro"></div></figure>
+        </div>
+      </div>
+
+      <div class="project-block">
         <h2>Setting up for the Bric-a-Brac Sale</h2>
         <p class="meta">St Finian's Community Hall, the day before the sale</p>
         <div class="gallery" data-lightbox>
@@ -168,21 +182,23 @@
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script>
 (function(){
-  var gallery = document.querySelector('.gallery[data-lightbox]');
-  if(!gallery) return;
-  var imgs = Array.prototype.slice.call(gallery.querySelectorAll('img'));
+  var galleries = Array.prototype.slice.call(document.querySelectorAll('.gallery[data-lightbox]'));
+  if(!galleries.length) return;
   var lb = document.getElementById('lightbox');
   var lbImg = document.getElementById('lbImg');
   var lbCount = document.getElementById('lbCount');
+  var current = [];      // images of the gallery currently open
   var i = 0, lastFocus = null;
 
   function show(n){
-    i = (n + imgs.length) % imgs.length;
-    lbImg.src = imgs[i].src;
-    lbImg.alt = imgs[i].alt;
-    lbCount.textContent = (i+1) + ' of ' + imgs.length;
+    if(!current.length) return;
+    i = (n + current.length) % current.length;
+    lbImg.src = current[i].src;
+    lbImg.alt = current[i].alt;
+    lbCount.textContent = (i+1) + ' of ' + current.length;
   }
-  function open(n){
+  function open(imgs, n){
+    current = imgs;
     lastFocus = document.activeElement;
     show(n);
     lb.classList.add('open');
@@ -195,12 +211,15 @@
     if(lastFocus) lastFocus.focus();
   }
 
-  imgs.forEach(function(img, n){
-    img.setAttribute('tabindex','0');
-    img.setAttribute('role','button');
-    img.addEventListener('click', function(){ open(n); });
-    img.addEventListener('keydown', function(e){
-      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); open(n); }
+  galleries.forEach(function(gallery){
+    var imgs = Array.prototype.slice.call(gallery.querySelectorAll('img'));
+    imgs.forEach(function(img, n){
+      img.setAttribute('tabindex','0');
+      img.setAttribute('role','button');
+      img.addEventListener('click', function(){ open(imgs, n); });
+      img.addEventListener('keydown', function(e){
+        if(e.key==='Enter' || e.key===' '){ e.preventDefault(); open(imgs, n); }
+      });
     });
   });
 
