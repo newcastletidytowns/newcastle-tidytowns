@@ -43,6 +43,34 @@
     .lb-btn{width:46px;height:46px;font-size:22px}
   }
   @media(prefers-reduced-motion:reduce){.lb-btn{transition:none}}
+
+  /* Year grouping */
+  .year-nav{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 30px}
+  .year-nav .label{font-family:"Hanken Grotesk",sans-serif;font-size:.95rem;color:#6b7266;margin-right:2px}
+  .year-nav a{
+    font-family:"Hanken Grotesk",sans-serif;font-size:1rem;font-weight:600;
+    color:#2f5d3a;text-decoration:none;border:1px solid #cfd8c6;border-radius:999px;
+    padding:6px 16px;transition:background .15s ease,color .15s ease;
+  }
+  .year-nav a:hover,.year-nav a:focus-visible{background:#2f5d3a;color:#fff}
+  .year-nav a:focus-visible{outline:3px solid var(--gorse,#e7c948);outline-offset:2px}
+
+  .year-group{border-top:2px solid #e3e8dc;margin:0 0 10px}
+  .year-group > summary{
+    font-family:"Fraunces",serif;font-size:1.9rem;color:#23311f;
+    padding:20px 0;cursor:pointer;list-style:none;
+    display:flex;align-items:center;gap:12px;
+  }
+  .year-group > summary::-webkit-details-marker{display:none}
+  .year-group > summary::before{
+    content:"";width:12px;height:12px;border-right:2.5px solid #2f5d3a;
+    border-bottom:2.5px solid #2f5d3a;transform:rotate(-45deg);
+    transition:transform .2s ease;flex:0 0 auto;margin-left:2px;
+  }
+  .year-group[open] > summary::before{transform:rotate(45deg)}
+  .year-group > summary:focus-visible{outline:3px solid var(--gorse,#e7c948);outline-offset:3px;border-radius:6px}
+  .year-group .count{font-family:"Hanken Grotesk",sans-serif;font-size:1rem;font-weight:500;color:#6b7266}
+  @media(prefers-reduced-motion:reduce){.year-group > summary::before{transition:none}}
 </style>
 </head>
 <body>
@@ -81,6 +109,30 @@
 <main id="main">
   <section>
     <div class="wrap">
+
+      <nav class="year-nav" aria-label="Jump to year">
+        <span class="label">Jump to:</span>
+        <a href="#y2026">2026</a>
+      </nav>
+
+      <details class="year-group" id="y2026" open>
+        <summary>2026 <span class="count">— our first year of photos</span></summary>
+
+      <div class="project-block">
+        <h2>Getting ready for Christmas</h2>
+        <p class="meta">A bright, frosty morning tidying the beds and the village entrance, November 2026</p>
+        <div class="gallery" data-lightbox>
+          <figure><div class="photo"><img src="images/xmas-team-roadside.webp" width="1500" height="1125" loading="lazy" decoding="async" alt="Newcastle Tidy Towns volunteers in hi-vis vests on a sunny autumn morning by the roadside"></div></figure>
+          <figure><div class="photo"><img src="images/xmas-team-wall.webp" width="1500" height="1125" loading="lazy" decoding="async" alt="The volunteer team gathered by the stone wall, tools in hand, ready to start"></div></figure>
+          <figure><div class="photo"><img src="images/xmas-newcastle-stone-bed.webp" width="1500" height="1125" loading="lazy" decoding="async" alt="Volunteers tidying the bed beside the Newcastle An Caislean Nua stone at the village entrance"></div></figure>
+          <figure><div class="photo"><img src="images/xmas-entrance-bed-wide.webp" width="1500" height="1125" loading="lazy" decoding="async" alt="A wider view of the village entrance bed being cleared and tidied by the team"></div></figure>
+          <figure><div class="photo"><img src="images/xmas-bed-tidied.webp" width="1500" height="1125" loading="lazy" decoding="async" alt="The freshly tidied raised stone bed with cyclamen, lavender and shrubs, ready for winter"></div></figure>
+          <figure><div class="photo"><img src="images/xmas-bed-broom.webp" width="1125" height="1500" loading="lazy" decoding="async" alt="The neatly swept entrance bed with a Tidy Towns broom resting against the stone wall"></div></figure>
+        </div>
+        <div style="max-width:720px;font-size:1.1rem;line-height:1.8;color:#40483f;margin-top:16px">
+          <p>A great turnout on a crisp, sunny morning to start getting the village ready for Christmas. The team gave the beds a good tidy, cleared back the summer growth and freshened up the planting at the village entrance by the Newcastle stone, so everything looks its best heading into the festive season. Thank you to everyone who came out and lent a hand.</p>
+        </div>
+      </div>
 
       <div class="project-block">
         <h2>Wednesday work by the team</h2>
@@ -297,6 +349,8 @@
         </div>
       </div>
 
+      </details>
+
     </div>
   </section>
 
@@ -327,6 +381,19 @@
 </div>
 
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+// Open a collapsed year group when it's jumped to via the index or a direct link
+(function(){
+  function openTarget(){
+    var id = location.hash.replace('#','');
+    if(!id) return;
+    var el = document.getElementById(id);
+    if(el && el.tagName === 'DETAILS'){ el.open = true; el.scrollIntoView(); }
+  }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+})();
+</script>
 <script>
 (function(){
   var galleries = Array.prototype.slice.call(document.querySelectorAll('.gallery[data-lightbox]'));
