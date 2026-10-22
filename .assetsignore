@@ -1,0 +1,7 @@
+   # Keep Git internals and tooling out of the uploaded website.
+   .git
+   .git/**
+   .gitignore
+   .assetsignore
+   .wrangler
+   node_modules
