@@ -152,3 +152,55 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   *{scroll-behavior:auto}
   .btn:hover{transform:none}
 }
+
+/* ============================================================
+   Seasonal theme — changes automatically by date (added 2026)
+   Every season shows a photo banner; autumn/winter/spring/christmas
+   also drift leaves/snow/blossom. Decorative + reduced-motion aware.
+   ============================================================ */
+.season-greet{background:var(--sg-bg,#7c4e23);color:#fff;text-align:center;
+  font-family:"Hanken Grotesk",sans-serif;font-size:.95rem;font-weight:500;padding:7px 16px}
+.hero,.page-hero{position:relative;overflow:hidden}
+.page-hero .wrap{position:relative;z-index:2}
+
+/* photo background layer — all seasons */
+.season-photo{position:absolute;inset:0;z-index:0;display:block}
+.season-photo .s-bg{position:absolute;inset:0;background:var(--sphoto) center 42%/cover no-repeat;
+  transform:scale(1.03);animation:sZoom 32s ease-in-out infinite alternate}
+.season-photo .s-ov{position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(16,28,20,.4) 0%,rgba(16,28,20,.55) 55%,rgba(16,28,20,.76) 100%)}
+@keyframes sZoom{from{transform:scale(1.03)}to{transform:scale(1.11)}}
+[data-season] .hero .wrap,[data-season] .page-hero .wrap{text-shadow:0 1px 8px rgba(0,0,0,.5)}
+
+/* drifting motif — autumn/winter/spring, and snow at christmas */
+.season-fx{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;display:none}
+[data-season="autumn"] .season-fx,[data-season="winter"] .season-fx,
+[data-season="spring"] .season-fx,[data-season="christmas"] .season-fx{display:block}
+.season-fx span{position:absolute;top:-44px;width:26px;height:26px;opacity:.9;
+  background:var(--fx) center/contain no-repeat;filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.35));
+  animation:fxFall linear infinite}
+.season-fx span:nth-child(1){left:5%;width:24px;height:24px;animation-duration:12s}
+.season-fx span:nth-child(2){left:16%;width:32px;height:32px;animation-duration:16s;animation-delay:2.5s}
+.season-fx span:nth-child(3){left:28%;width:20px;height:20px;animation-duration:10s;animation-delay:5s}
+.season-fx span:nth-child(4){left:40%;width:30px;height:30px;animation-duration:14s;animation-delay:1s}
+.season-fx span:nth-child(5){left:52%;width:22px;height:22px;animation-duration:13s;animation-delay:4s}
+.season-fx span:nth-child(6){left:64%;width:34px;height:34px;animation-duration:17s;animation-delay:2s}
+.season-fx span:nth-child(7){left:75%;width:24px;height:24px;animation-duration:11s;animation-delay:6s}
+.season-fx span:nth-child(8){left:85%;width:30px;height:30px;animation-duration:15s;animation-delay:3.5s}
+.season-fx span:nth-child(9){left:46%;width:20px;height:20px;animation-duration:18s;animation-delay:7s}
+.season-fx span:nth-child(10){left:93%;width:22px;height:22px;animation-duration:12s;animation-delay:8.5s}
+@keyframes fxFall{0%{transform:translateY(0) rotate(0);opacity:0}8%{opacity:.95}92%{opacity:.95}
+  100%{transform:translateY(430px) rotate(300deg);opacity:0}}
+
+/* per-season tokens */
+[data-season="autumn"]{--sg-bg:#7c4e23;--sphoto:url("images/autumn-leaves.webp");
+  --fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6 7 4 13 12 22C20 13 18 7 12 2Z' fill='%23e07c22'/%3E%3Cpath d='M12 5V20' stroke='%238a3a11' stroke-width='1'/%3E%3C/svg%3E")}
+[data-season="winter"]{--sg-bg:#3f5f78;--sphoto:url("images/winter-coast.webp");
+  --fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M12 2.5V21.5 M3.8 7.25 20.2 16.75 M20.2 7.25 3.8 16.75'/%3E%3Cpath d='M12 2.5 10 4.8 M12 2.5 14 4.8 M12 21.5 10 19.2 M12 21.5 14 19.2 M20.2 16.75 17.6 16.4 M20.2 16.75 19.9 14.1 M3.8 7.25 6.4 7.6 M3.8 7.25 4.1 9.9 M20.2 7.25 17.6 7.6 M20.2 7.25 19.9 9.9 M3.8 16.75 6.4 16.4 M3.8 16.75 4.1 14.1'/%3E%3C/svg%3E")}
+[data-season="christmas"]{--sg-bg:#a32f2f;--sphoto:url("images/xmas-sleigh-aurora.webp");
+  --fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M12 2.5V21.5 M3.8 7.25 20.2 16.75 M20.2 7.25 3.8 16.75'/%3E%3Cpath d='M12 2.5 10 4.8 M12 2.5 14 4.8 M12 21.5 10 19.2 M12 21.5 14 19.2 M20.2 16.75 17.6 16.4 M20.2 16.75 19.9 14.1 M3.8 7.25 6.4 7.6 M3.8 7.25 4.1 9.9 M20.2 7.25 17.6 7.6 M20.2 7.25 19.9 9.9 M3.8 16.75 6.4 16.4 M3.8 16.75 4.1 14.1'/%3E%3C/svg%3E")}
+[data-season="spring"]{--sg-bg:#4d6b34;--sphoto:url("images/spring-crocus.webp");
+  --fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='12' rx='6' ry='10' fill='%23f0a9c6' stroke='%23d87aa0' stroke-width='1'/%3E%3C/svg%3E")}
+[data-season="summer"]{--sg-bg:#3c6238;--sphoto:url("images/summer-cliffs.webp")}
+
+@media (prefers-reduced-motion:reduce){ .season-fx{display:none !important} .season-photo .s-bg{animation:none} }
