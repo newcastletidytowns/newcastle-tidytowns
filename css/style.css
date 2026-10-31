@@ -193,14 +193,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   100%{transform:translateY(430px) rotate(300deg);opacity:0}}
 
 /* per-season tokens */
-[data-season="autumn"]{--sg-bg:#7c4e23;--sphoto:url("images/autumn-leaves.webp");
+[data-season="autumn"]{--sg-bg:#7c4e23;--sphoto:url("../images/autumn-leaves.webp");
   --fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6 7 4 13 12 22C20 13 18 7 12 2Z' fill='%23e07c22'/%3E%3Cpath d='M12 5V20' stroke='%238a3a11' stroke-width='1'/%3E%3C/svg%3E")}
-[data-season="winter"]{--sg-bg:#3f5f78;--sphoto:url("images/winter-coast.webp");
+[data-season="winter"]{--sg-bg:#3f5f78;--sphoto:url("../images/winter-coast.webp");
   --fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M12 2.5V21.5 M3.8 7.25 20.2 16.75 M20.2 7.25 3.8 16.75'/%3E%3Cpath d='M12 2.5 10 4.8 M12 2.5 14 4.8 M12 21.5 10 19.2 M12 21.5 14 19.2 M20.2 16.75 17.6 16.4 M20.2 16.75 19.9 14.1 M3.8 7.25 6.4 7.6 M3.8 7.25 4.1 9.9 M20.2 7.25 17.6 7.6 M20.2 7.25 19.9 9.9 M3.8 16.75 6.4 16.4 M3.8 16.75 4.1 14.1'/%3E%3C/svg%3E")}
-[data-season="christmas"]{--sg-bg:#a32f2f;--sphoto:url("images/xmas-sleigh-aurora.webp");
+[data-season="christmas"]{--sg-bg:#a32f2f;--sphoto:url("../images/xmas-sleigh-aurora.webp");
   --fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M12 2.5V21.5 M3.8 7.25 20.2 16.75 M20.2 7.25 3.8 16.75'/%3E%3Cpath d='M12 2.5 10 4.8 M12 2.5 14 4.8 M12 21.5 10 19.2 M12 21.5 14 19.2 M20.2 16.75 17.6 16.4 M20.2 16.75 19.9 14.1 M3.8 7.25 6.4 7.6 M3.8 7.25 4.1 9.9 M20.2 7.25 17.6 7.6 M20.2 7.25 19.9 9.9 M3.8 16.75 6.4 16.4 M3.8 16.75 4.1 14.1'/%3E%3C/svg%3E")}
-[data-season="spring"]{--sg-bg:#4d6b34;--sphoto:url("images/spring-crocus.webp");
+[data-season="spring"]{--sg-bg:#4d6b34;--sphoto:url("../images/spring-crocus.webp");
   --fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='12' rx='6' ry='10' fill='%23f0a9c6' stroke='%23d87aa0' stroke-width='1'/%3E%3C/svg%3E")}
-[data-season="summer"]{--sg-bg:#3c6238;--sphoto:url("images/summer-cliffs.webp")}
+[data-season="summer"]{--sg-bg:#3c6238;--sphoto:url("../images/summer-cliffs.webp")}
 
 @media (prefers-reduced-motion:reduce){ .season-fx{display:none !important} .season-photo .s-bg{animation:none} }
