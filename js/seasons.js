@@ -20,7 +20,7 @@
     summer:"Happy summer from Newcastle Tidy Towns"
   };
   var key=season();
-  document.documentElement.setAttribute("data-season", (key==="newyear")?"winter":key);
+  document.documentElement.setAttribute("data-season", key);
   function build(){
     if(!document.querySelector(".season-greet")){
       var g=document.createElement("div");
