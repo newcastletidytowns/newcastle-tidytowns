@@ -209,3 +209,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 [data-season="newyear"]{--sg-bg:#2a3c86;--sphoto:url("../images/newyear-fireworks.webp");--fx:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M12 2.5V21.5 M3.8 7.25 20.2 16.75 M20.2 7.25 3.8 16.75'/%3E%3Cpath d='M12 2.5 10 4.8 M12 2.5 14 4.8 M12 21.5 10 19.2 M12 21.5 14 19.2 M20.2 16.75 17.6 16.4 M20.2 16.75 19.9 14.1 M3.8 7.25 6.4 7.6 M3.8 7.25 4.1 9.9 M20.2 7.25 17.6 7.6 M20.2 7.25 19.9 9.9 M3.8 16.75 6.4 16.4 M3.8 16.75 4.1 14.1'/%3E%3C/svg%3E")}
 [data-season="newyear"] .season-fx{display:block}
 [data-season="newyear"] .season-photo .s-ov{background:linear-gradient(105deg,rgba(4,8,22,.72) 0%,rgba(4,8,22,.42) 40%,rgba(4,8,22,.1) 66%,rgba(4,8,22,0) 100%)}
+[data-season="christmas"] .season-photo .s-bg{background-position:right 42%}
+
+/* Justified body text for even left and right edges (added 2026) */
+.hero p.lede,
+.page-hero p,
+.section-head p,
+.project-block p:not(.meta),
+.recurring p,
+.wrap > p{
+  text-align:justify;
+  text-align-last:left;
+  -webkit-hyphens:auto;
+  hyphens:auto;
+}
