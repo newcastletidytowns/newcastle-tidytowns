@@ -223,3 +223,19 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   -webkit-hyphens:auto;
   hyphens:auto;
 }
+
+/* ===== Christmas lights switch-on banner (sitewide) ===== */
+.xmas-banner{display:block;background:linear-gradient(90deg,#7d1620,#1e3d29 55%,#7d1620);color:#fff5e6;text-decoration:none;overflow:hidden;white-space:nowrap;border-bottom:2px solid var(--gorse)}
+.xmas-banner:hover,.xmas-banner:focus-visible{color:#fff}
+.xmas-banner .track{display:inline-block;will-change:transform;animation:xmas-scroll 30s linear infinite}
+.xmas-banner:hover .track,.xmas-banner:focus-within .track{animation-play-state:paused}
+.xmas-banner .grp{display:inline-block}
+.xmas-banner .seg{display:inline-block;padding:9px 1.6rem;font-weight:500;font-size:.96rem;letter-spacing:.01em}
+.xmas-banner .seg b{color:var(--gorse)}
+@keyframes xmas-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){
+  .xmas-banner{white-space:normal;text-align:center}
+  .xmas-banner .track{animation:none;display:block}
+  .xmas-banner .grp + .grp{display:none}
+  .xmas-banner .grp .seg + .seg{display:none}
+}
